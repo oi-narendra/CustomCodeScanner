@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CustomCodeScanner</string>
+    <string name="scan_the_code_below">Scan the code below</string>
+    <string name="scanned_result">SCANNED RESULT</string>
+    <string name="scanned_image">Scanned Image</string>
+    <string name="scan">SCAN</string>
+    <string name="flash_image">FLASH IMAGE</string>
 </resources>
