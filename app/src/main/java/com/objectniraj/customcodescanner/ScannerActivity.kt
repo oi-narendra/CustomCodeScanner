@@ -15,18 +15,22 @@ class ScannerActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener 
     private var capture: CaptureManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //Hiding the notch display
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_scanner)
 
+        //For smooth enter/exit animation
         this.overridePendingTransition(
             android.R.anim.fade_in,
             android.R.anim.fade_out
         )
 
+        //Setting torch listener
         barcodeScanner.setTorchListener(this)
 
         flash.setOnClickListener {
@@ -38,6 +42,7 @@ class ScannerActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener 
                 true
             }
         }
+        //initiate scan
         capture = CaptureManager(this, barcodeScanner)
         capture!!.initializeFromIntent(intent, savedInstanceState)
         capture!!.decode()

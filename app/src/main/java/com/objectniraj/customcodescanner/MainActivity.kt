@@ -14,18 +14,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         startScan.setOnClickListener {
-            IntentIntegrator(this)
-                .setCaptureActivity(ScannerActivity::class.java)
-                .setBeepEnabled(true)
-                .setOrientationLocked(true)
-                .setBarcodeImageEnabled(true)
-                .setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
-                .setCameraId(0)
-                .initiateScan()
+            IntentIntegrator(this)      //Use ForsupportFragment for fragment
+                .setCaptureActivity(ScannerActivity::class.java)    //Scanner Activity
+                .setBeepEnabled(true)                               //Scan beep enabled
+                .setOrientationLocked(true)                         //Orientation locked
+                .setBarcodeImageEnabled(true)                       //Get Scanned image
+                .setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)  //Scan code types
+                .setCameraId(0)                                     //Primary camera for scanning
+                .initiateScan()                                     //initiate scan
         }
 
     }
 
+    /**
+     * Result is achieved by overriding this method
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         //check for null
