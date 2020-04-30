@@ -1,10 +1,10 @@
 # CustomCodeScanner
 Custom Designed FullScreen Bar/Qr Code scanner
 
-Scanning View
+<h3>Scanning View</h3>
 <img src="https://github.com/nirajbhatt22/CustomCodeScanner/blob/master/scanning.jpg" width="200">
 
-Result View
+<h3>Result View</h3>
 <img src="https://github.com/nirajbhatt22/CustomCodeScanner/blob/master/result.jpg" width="200">
 
   
